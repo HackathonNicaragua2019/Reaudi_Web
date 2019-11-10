@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import Carousel from './carousel';
 
 
 
@@ -8,8 +8,8 @@ class Dashboard extends Component{
         
         
         return(
-            <div className="p-3 mb-2 bg-danger text-white">
-                
+            <div className="p-3 mb-2 text-white">
+                <Carousel/>
             </div>
         )
       

@@ -71,7 +71,7 @@ class SignUp extends Component{
                         </div>
 
                         <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrar</button>
-                        <a className="d-block text-center mt-2 small" href="#">Iniciar sesión</a>
+                        
                         <hr className="my-4"/>
                         { authError ? <p>{authError}</p>: null}
                         </form>

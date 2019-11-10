@@ -30,14 +30,17 @@ class SignIn extends Component{
         if (auth.uid) return <Redirect to='/'/>
         return(
             <div className="row">
+
                 
-                <div className="col-lg-10 col-xl-9 mx-auto">
+                <div className="col-lg-10 col-xl-5 mx-auto">
+                    
                     
                     <div className="card card-signup flex-row my-5">
                     
                     <div className="card-img-left d-none d-md-flex">
                         
                     </div>
+                    
                     
                     <div className="card-body">
                     <div className="card-title text-danger text-center">Inicio de Sesión</div>
@@ -58,14 +61,16 @@ class SignIn extends Component{
                         </div>
 
                         <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Iniciar Sesión</button>
-                        <a className="d-block text-center mt-2 small" href="#">Registrate</a>
+                        
                         <hr className="my-4"/>
                         { authError ? <p>{authError}</p>: null}
                         </form>
                     </div>
                     </div>
+                    
                 </div>
-   
+               
+                
             </div>
         )
     }

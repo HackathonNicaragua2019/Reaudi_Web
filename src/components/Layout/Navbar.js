@@ -18,7 +18,7 @@ const Navbar = (props) =>{
                 <span className="navbar-toggler-icon"></span>
             </button>
             <li className="nav-item active">
-                    <Link to="/" className="navbar-brand text-light font-weight-bold">REAUDI</Link>
+                    <Link to="/" className="navbar-brand text-light font-weight-bold ">REAUDI</Link>
             </li>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto ">
@@ -71,7 +71,7 @@ const Navbar = (props) =>{
                         
                             <a className="nav-link" onClick={props.signOut}>Salir<span className="sr-only">(current)</span></a>
                         </li>
-                        <li className="nav-item"><NavLink to="/" className="nav-link btn btn-warning btn-circle btn-xl">{profile.initials}</NavLink></li>
+                        <li><NavLink to="/" className="btn bg-danger lighten-1">{props.profile.initials}<span className="sr-only">(current)</span></NavLink></li>
                     </ul>
                 }
                  
