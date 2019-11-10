@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Dashboard from './components/Dashboard/Dashboard';
 import Navbar from './components/Layout/Navbar';
 import signup from './components/auth/signup';
+import signin from './components/auth/signin';
 
 
 
@@ -14,6 +15,7 @@ function App() {
             <Switch>
                 <Route exact path='/' component={Dashboard}></Route>
                 <Route exact path='/signup' component={signup}></Route>
+                <Route exact path='/signin' component={signin}></Route>
             </Switch>
         </div>
     </BrowserRouter>

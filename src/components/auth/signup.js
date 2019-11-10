@@ -24,7 +24,10 @@ class SignUp extends Component{
         const newUser = {...state};
         props.signUp(newUser);
     }
+    
     render() {
+        var auth = this.state;
+        if (auth.uid) return <Redirect to='/'/>;
         const {authError} = this.props;
         return(
             <div className="row">

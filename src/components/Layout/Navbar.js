@@ -1,30 +1,36 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom'
+import {connect} from 'react-redux';
+import {Link, NavLink} from 'react-router-dom';
+import {signOut} from "../../store/actions/authAction";
 const Navbar = (props) =>{
 
 /*     const {auth, profile} = props;
     const links = auth.uid ? <SignedInLink profile={profile}/> : <SignedOutLink/>; */
-
+    const {auth, profile} = props;
+    console.log(auth)
     return(
+
         <nav className="navbar navbar-expand-lg navbar-light">
             
-            <Link to="/" className="navbar-brand">Reaudi</Link>
+            
             
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-
+            <li className="nav-item active">
+                    <Link to="/" className="navbar-brand text-light font-weight-bold">REAUDI</Link>
+            </li>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                </li>
+                <ul className="navbar-nav mr-auto ">
+        
+                
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
+                    <a className="nav-link text-light" href="#">¿Quienes Somos?</a>
                 </li>
+                
                 <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Servicio
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a className="dropdown-item" href="#">Action</a>
@@ -33,23 +39,57 @@ const Navbar = (props) =>{
                     <a className="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link disabled" href="#"  aria-disabled="true">Disabled</a>
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Empresa colaboradoras
+                    </a>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a className="dropdown-item" href="#">Action</a>
+                    <a className="dropdown-item" href="#">Another action</a>
+                    <div className="dropdown-divider"></div>
+                    <a className="dropdown-item" href="#">Something else here</a>
+                    </div>
                 </li>
-                </ul>
                 
-                <ul className="navbar-nav my-auto">
-                <li className="nav-item">
-                    <NavLink to="/signup" className="nav-link">Registrate<span className="sr-only">(current)</span></NavLink>
-                    
-                </li>
-                <li className="nav-item ">
-                    <a className="nav-link" href="#"> Iniciar Sesion <span className="sr-only">(current)</span></a>
-                </li>
-                </ul>  
+                
+                </ul>
+                {!auth.uid ? 
+                    <ul className="navbar-nav my-auto">
+                        <li className="nav-item">
+                            <NavLink to="/signup" className="nav-link text-light">Registrate<span className="sr-only">(current)</span></NavLink>
+                            
+                        </li>
+                        
+                        <li className="nav-item ">
+                            <NavLink to="/signin" className="nav-link text-light">Iniciar Sesión<span className="sr-only">(current)</span></NavLink>
+                        </li>
+                    </ul> 
+                :
+                    <ul className="navbar-nav my-auto" >
+                        
+                        <li className="nav-item">
+                        
+                            <a className="nav-link" onClick={props.signOut}>Salir<span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item"><NavLink to="/" className="nav-link btn btn-warning btn-circle btn-xl">{profile.initials}</NavLink></li>
+                    </ul>
+                }
+                 
             </div>
         </nav>
 
     )
 }
-export default Navbar
+const mapStateToProps = state => {
+
+    return{
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
+    }
+}
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        signOut: () => dispatch(signOut())
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

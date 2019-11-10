@@ -1,6 +1,6 @@
 import firebase from "firebase";
 import {firestore} from 'firebase';
-export const signIn = ( credentials) => (dispatch, getState) => {
+export const signIn = (credentials) => (dispatch, getState) => {
 
     firebase.auth().signInWithEmailAndPassword(
         credentials.email,
