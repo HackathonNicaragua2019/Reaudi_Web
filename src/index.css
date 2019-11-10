@@ -119,13 +119,6 @@ body {
   color: #777;
 }
 
-.btn-google {
-  color: white;
-  background-color: #ea4335;
+.navbar {
+  background: #430475;
 }
-
-.btn-facebook {
-  color: white;
-  background-color: #3b5998;
-}
-

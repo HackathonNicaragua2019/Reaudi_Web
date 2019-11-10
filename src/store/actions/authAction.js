@@ -1,7 +1,7 @@
 import firebase from "firebase";
 import {firestore} from 'firebase';
 export const signIn = (credentials) => (dispatch, getState) => {
-
+    console.log(credentials)
     firebase.auth().signInWithEmailAndPassword(
         credentials.email,
         credentials.password,
@@ -17,7 +17,7 @@ export const signOut = () => (dispatch, getState) => {
     });
 };
 export const signUp = (newUser) => (dispatch, getState) => {
-
+    console.log(newUser)
     firebase.auth().createUserWithEmailAndPassword(
         newUser.email,
         newUser.password,

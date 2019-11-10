@@ -16,8 +16,8 @@ class Aboutus extends Component{
                     
                     <div className="card card-signup flex-row my-5">
                     
-                        <div className="card-img-left d-none d-md-flex">
-                        
+                        <div className=" d-md-flex">
+                            <img src="https://scontent.fmga6-1.fna.fbcdn.net/v/t1.0-9/p720x720/74469725_1622315367911627_6353661402917371904_o.jpg?_nc_cat=103&_nc_oc=AQlb21nYR8VmwMa9Vmnn6M3uwLmQXOQKLYnS6SKuRUsefDb-wIRY1lhjjQG5s5GoESI&_nc_ht=scontent.fmga6-1.fna&oh=113a4746254f67ef087ac70ea96808d0&oe=5E479299" height="190px"></img>
                         </div>
                         
                             <div className="card-body">

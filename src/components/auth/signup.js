@@ -44,8 +44,8 @@ class SignUp extends Component{
                     <div className="card-title text-danger text-center">Registro de Usuario</div>
                         <form className="form-signup" onSubmit={this.handleSubmit}>
 
-                        <div class="form-label-group">
-                            <input onChange={this.handleChange} type="text" id="firstname" class="form-control" placeholder="Username" required autofocus/>
+                        <div className="form-label-group">
+                            <input onChange={this.handleChange} type="text" id="firstname" className="form-control" placeholder="Username" required autofocus/>
                             <label for="firstname">Nombre</label>
                         </div>
                         <div className="form-label-group">

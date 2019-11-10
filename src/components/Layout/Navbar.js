@@ -31,13 +31,14 @@ const Navbar = (props) =>{
                 
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Servicio
+                    Servicios
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a className="dropdown-item" href="#">Action</a>
-                    <a className="dropdown-item" href="#">Another action</a>
+                    <a className="dropdown-item" href="#">Asesoria</a>
+                    <a className="dropdown-item" href="#">Atencion psicologica</a>
+                    <a className="dropdown-item" href="#">Manual de defensa personal</a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Something else here</a>
+                    <a className="dropdown-item" href="#">Violentrometro</a>
                     </div>
                 </li>
                 <li className="nav-item dropdown">
@@ -45,13 +46,41 @@ const Navbar = (props) =>{
                     Empresa colaboradoras
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a className="dropdown-item" href="#">Action</a>
-                    <a className="dropdown-item" href="#">Another action</a>
+                    <a className="dropdown-item" href="http://www.minim.gob.ni/">MINIM</a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Something else here</a>
+                    <a className="dropdown-item" href="https://www.mifamilia.gob.ni/">MIFAM</a>
+                    <div className="dropdown-divider"></div>
+                    <a className="dropdown-item" href="http://www.cnu.edu.ni/">CNU</a>
+                    <div className="dropdown-divider"></div>
+                    <a className="dropdown-item" href="https://www.tecnacional.edu.ni/">INATEC</a>
+                    <div className="dropdown-divider"></div>
+                    <a className="dropdown-item" href="https://www.mined.gob.ni/">MINED</a>
+                    <div className="dropdown-divider"></div>
+                    <a className="dropdown-item" href="https://www.policia.gob.ni/">Policia Nacional</a>
+                    <div className="dropdown-divider"></div>
+                    <a className="dropdown-item" href="https://www.uaf.gob.ni/cooperacion-nacional/instituciones-nacionales/mefcca">MEFCCA</a>
                     </div>
                 </li>
+                <li className="nav-item">
+                    <li><NavLink to="/news" className="nav-link text-light">Noticias<span className="sr-only">(current)</span></NavLink></li>
+                    
+                </li>
                 
+                <li className="nav-item">
+                    <a href="https://www.facebook.com/Reaudi-103252227801362/" class="btn btn-info btn-social-icon btn-twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a href="https://www.facebook.com/Reaudi-103252227801362/" class="btn btn-light btn-social-icon btn-google">
+                            <i class="fab fa-google"></i>
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a href="https://www.facebook.com/Reaudi-103252227801362/" class="btn btn-primary btn-social-icon btn-facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
                 
                 </ul>
                 {!auth.uid ? 
@@ -75,7 +104,7 @@ const Navbar = (props) =>{
                         <li><NavLink to="/" className="btn bg-danger lighten-1">{props.profile.initials}<span className="sr-only">(current)</span></NavLink></li>
                     </ul>
                 }
-                 
+                
             </div>
         </nav>
 
