@@ -6,6 +6,9 @@ import signup from './components/auth/signup';
 import signin from './components/auth/signin';
 import aboutus from './components/Layout/aboutus';
 import News from './components/Layout/News';
+import newsDetails from './components/Dashboard/newsDetails';
+import Test from './components/test/test';
+import personaldefense from './components/Layout/personal-defense';
 
 
 
@@ -20,6 +23,9 @@ function App() {
                 <Route path='/signin' component={signin}></Route>
                 <Route path='/aboutus' component={aboutus}></Route>
                 <Route path='/news' component={News}></Route>
+                <Route path='/newsDetails/:id' component={newsDetails}></Route>
+                <Route path='/test' component={Test}></Route>
+                <Route path='/personal-defense' component={personaldefense}></Route>
             </Switch>
         </div>
     </BrowserRouter>

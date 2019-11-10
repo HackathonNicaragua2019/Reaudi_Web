@@ -3,7 +3,9 @@ import {connect} from 'react-redux';
 import {createNews} from '../../store/actions/newsAction';
 import {compose} from "redux";
 import {firestoreConnect} from "react-redux-firebase";
- import moment from 'moment'
+ import moment from 'moment';
+ import {Link} from "react-router-dom";
+ import {newsDetails} from '../Dashboard/newsDetails'
 
 class News extends Component{
     
@@ -32,23 +34,33 @@ class News extends Component{
         return(
             <div >
                 <div className="col-lg-10" ><button className="btn btn-right btn-primary  my-4" data-toggle="modal" data-target="#exampleModal">Crear Publicación</button></div>
-                <div className="test-list section">
+                <div className="news-list section">
+                <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr>
                     {news && news.map(n =>{
                         return(
                             <div className="mx-5">
                                 <div className="card" >
                                     <div className="card-body">
-                                        <h5 className="card-title">{n.title}</h5>
-                                        <h6 className="card-subtitle mb-2 text-muted">Anonimo</h6>
-                                        <p className="card-text">{n.content}</p>
+
+                                        
+                                        <h6 className="card-subtitle mb-2 text-muted">Usuario: Anonimo</h6>
+                                        <h5 className="card-title">Titulo: {n.title}</h5>
                                         <p className="card-text">{moment(n.timestamp.toDate()).fromNow()}</p>
-                                        <a href="#" className="card-link">details link</a>
+                                        <Link to={'/newsDetails/'+n.id} key={n.id}>
+                                        <button className="bg-primary"><a className="card-link text-light">Leer Mas</a></button>
+                                            <newsDetails news={n}/>
+                                        </Link>
                                     </div>
                                 </div>
                                 <hr className="my-4"></hr>
                             </div>
                         )
                     })}
+                    </tr>
+                    </tbody>
+                    </table>
                 </div>
                 
                 <div>

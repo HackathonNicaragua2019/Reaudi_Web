@@ -23,6 +23,7 @@ class SignUp extends Component{
         const {props, state} = this;
         const newUser = {...state};
         props.signUp(newUser);
+        props.history.url('/');
     }
     
     render() {

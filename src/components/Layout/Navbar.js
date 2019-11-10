@@ -36,9 +36,10 @@ const Navbar = (props) =>{
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a className="dropdown-item" href="#">Asesoria</a>
                     <a className="dropdown-item" href="#">Atencion psicologica</a>
-                    <a className="dropdown-item" href="#">Manual de defensa personal</a>
+                    <a className="dropdown-item" href="./Manual-de-autodefensa2definitivo.pdf"><NavLink to="/personal-defense" className="nav-link">Manual de defensa personal<span className="sr-only">(current)</span></NavLink></a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Violentrometro</a>
+                    <a className="dropdown-item" href="#"><NavLink to="/test" className="nav-link">Violentometro<span className="sr-only">(current)</span></NavLink></a>
+                    
                     </div>
                 </li>
                 <li className="nav-item dropdown">
@@ -97,10 +98,11 @@ const Navbar = (props) =>{
                 :
                     <ul className="navbar-nav my-auto" >
                         
-                        <li className="nav-item">
-                        
-                            <a className="nav-link" onClick={props.signOut}>Salir<span className="sr-only">(current)</span></a>
+                        <li className="nav-item ">
+                        <NavLink to="/"><a className="nav-link" onClick={props.signOut}><i class="fas fa-sign-out-alt"></i><span className="sr-only">(current)</span></a></NavLink>
+                            
                         </li>
+                        
                         <li><NavLink to="/" className="btn bg-danger lighten-1">{props.profile.initials}<span className="sr-only">(current)</span></NavLink></li>
                     </ul>
                 }
