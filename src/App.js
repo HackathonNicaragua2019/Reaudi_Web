@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Navbar from './components/Layout/Navbar';
 import signup from './components/auth/signup';
 import signin from './components/auth/signin';
+import aboutus from './components/Layout/aboutus';
 
 
 
@@ -16,6 +17,7 @@ function App() {
                 <Route exact path='/' component={Dashboard}></Route>
                 <Route exact path='/signup' component={signup}></Route>
                 <Route exact path='/signin' component={signin}></Route>
+                <Route exact path='/aboutus' component={aboutus}></Route>
             </Switch>
         </div>
     </BrowserRouter>

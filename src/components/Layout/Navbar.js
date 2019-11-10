@@ -25,7 +25,8 @@ const Navbar = (props) =>{
         
                 
                 <li className="nav-item">
-                    <a className="nav-link text-light" href="#">¿Quienes Somos?</a>
+                    <li><NavLink to="/aboutus" className="nav-link text-light">¿Quienes Somos?<span className="sr-only">(current)</span></NavLink></li>
+                    
                 </li>
                 
                 <li className="nav-item dropdown">
